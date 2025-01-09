@@ -1,0 +1,10 @@
+.custom-size {
+    padding-top: 10px;
+    float: inline-start;
+    width: 170px;
+    height: auto;
+}
+
+#welcomeText {
+    margin-left: 15px;
+}
