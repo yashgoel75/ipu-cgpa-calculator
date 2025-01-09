@@ -14,7 +14,7 @@ subjectCount.addEventListener('change', () => {
         
         const marksSpan = document.createElement('span');
         marksSpan.classList.add("input-group-text");
-        marksSpan.textContent = `Marks in subject ${i + 1}`;
+        marksSpan.textContent = `Marks in Subject ${i + 1}`;
         inputGroup.appendChild(marksSpan);
 
         const inputMarks = document.createElement('input');
@@ -28,7 +28,7 @@ subjectCount.addEventListener('change', () => {
         
         const creditSpan = document.createElement('span');
         creditSpan.classList.add("input-group-text");
-        creditSpan.textContent = `Max Credits in subject ${i + 1}`;
+        creditSpan.textContent = `Max Credits in Subject ${i + 1}`;
         inputGroup.appendChild(creditSpan);
 
         const inputCredit = document.createElement('input');
