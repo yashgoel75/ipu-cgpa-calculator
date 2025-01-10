@@ -2,15 +2,11 @@ body {
     margin-bottom: 20px;
 }
 
-.formula-container {
-    margin-left: 10%;
-}
-
 #labelForSGPA {
     background-color: #f8f9fa;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     img#logo {
         width: 110px;
     }
