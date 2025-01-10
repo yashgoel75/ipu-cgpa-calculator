@@ -16,6 +16,10 @@ body {
     }
 }
 
+.cgpaCalculation {
+    display: none;
+}
+
 .selection {
     text-align: center;
 }
