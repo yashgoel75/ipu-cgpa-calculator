@@ -9,3 +9,9 @@ body {
 #labelForSGPA {
     background-color: #f8f9fa;
 }
+
+@media screen and (max-width: 576px){
+    img#logo {
+        width: 110px;
+    }
+}
