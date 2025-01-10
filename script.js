@@ -175,7 +175,7 @@ function handleSubmitCGPA() {
     let creditSum = 0;
 
     for (let i = 0; i < numberOfSem; i++) {
-        const currentSGPA = parseInt(document.getElementById(`sgpa${i + 1}`).value);
+        const currentSGPA = parseFloat(document.getElementById(`sgpa${i + 1}`).value);
         const currentCredit = parseInt(document.getElementById(`creditCGPA${i + 1}`).value);
 
         if (isNaN(currentSGPA) || isNaN(currentCredit)) {
