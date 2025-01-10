@@ -19,143 +19,292 @@
             <div class="h3">Welcome to IPU CGPA Calculator</div>
         </div>
     </nav>
-    <div class="container">
-        <div class="container mt-4"></div>
-        <form>
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="subjectCount">Number of Subjects</label>
-                <select class="form-select" id="subjectCount">
-                    <option selected>--Select the Number of Subjects--</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                </select>
-            </div>
-        </form>
-        <form>
-            <div class="input-group mb-3" id="subjects">
 
-            </div>
-            <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
-                <button type="reset" onclick="handleClear()" class="btn btn-outline-danger">Clear</button>
-                <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
-            </div>
-        </form>
-    </div>
-    <div class="container" id="resultParent">
-        <ul class="list-group list-group-horizontal">
-            <li class="list-group-item" id="labelForSGPA">Your SGPA</li>
-            <li id="result" class="list-group-item">-</li>
-        </ul>
-    </div>
-    <div class="container mt-5">
-        <div class="h5">
-            Here's a breakdown of how is your SGPA calculated -<br>
+    <div class="selection">
+        <div class="container mt-4"></div>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" onclick="sgpa()" class="btn-check" name="btnradio" id="sgpa" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="sgpa">SGPA</label>
+
+            <input type="radio" onclick="cgpa()" class="btn-check" name="btnradio" id="cgpa" autocomplete="off">
+            <label class="btn btn-outline-primary" for="cgpa">CGPA</label>
         </div>
-        <strong>Semester Grade Point Average (SGPA) </strong>is a measure of a student’s academic performance in a
-        given semester. It is calculated as the weighted average of the grade points obtained in all subjects, with
-        the respective credit values as weights. Here's how it is typically calculated: <br><br>
-        <ol>
-            <li><strong>Grade Points for Each Subject:</strong> <br>
+    </div>
+
+    <div class="sgpaCalculation">
+        <div class="container">
+            <div class="container mt-4"></div>
+            <form>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="subjectCount">Number of Subjects</label>
+                    <select class="form-select" id="subjectCount">
+                        <option selected>--Select the Number of Subjects--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                    </select>
+                </div>
+            </form>
+            <form>
+                <div class="input-group mb-3" id="subjects">
+
+                </div>
+                <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
+                    <button type="reset" onclick="handleClear()" class="btn btn-outline-danger">Clear</button>
+                    <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="container" id="resultParent">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" id="labelForSGPA">Your SGPA</li>
+                <li id="result" class="list-group-item">-</li>
+            </ul>
+        </div>
+        <div class="container mt-5">
+            <div class="h5">
+                Here's a breakdown of how is your SGPA calculated -<br>
+            </div>
+            <strong>Semester Grade Point Average (SGPA) </strong>is a measure of a student’s academic performance in a
+            given semester. It is calculated as the weighted average of the grade points obtained in all subjects, with
+            the respective credit values as weights. Here's how it is typically calculated: <br><br>
+            <ol>
+                <li><strong>Grade Points for Each Subject:</strong> <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Range</th>
+                                <th>Grade Point</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>90-100</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>75-89</th>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <th>65-74</th>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <th>55-64</th>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <th>50-54</th>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <th>45-49</th>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <th>40-44</th>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th>Below 40</th>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li><br>
+                <li><strong>Credit System:</strong> <br>
+                    Each subject is assigned a certain number of credits (a measure of workload or importance). For
+                    example:
+                    <ul>
+                        <li>A theory subject might have <strong>4 credits.</strong></li>
+                        <li>A lab session might have <strong>2 credits.</strong></li>
+                    </ul>
+                </li><br>
+                <li><strong>Formula for SGPA:</strong> <br>
+                    The SGPA is calculated using the formula: <br>
+                    <div class="formula-container">
+                        <p class="formula">
+                            \[
+                            SGPA = \frac{\sum (\text{Grade Points} \times \text{Credits})}{\sum (\text{Credits})}
+                            \]
+                        </p>
+                    </div>
+                    where:
+                    <ul>
+                        <li><strong>Grade Points: </strong>Grade point earned for a subject</li>
+                        <li><strong>Credits: </strong>Number of credits for that subject.</li>
+                    </ul>
+                </li><br>
+                <li><strong>Example Calculation:</strong> <br>
+                    Suppose a student has 3 subjects with the following details:
+                    <ul>
+                        <li><strong>Subject 1:</strong> Grade Point = 8, Credits = 4</li>
+                        <li><strong>Subject 2:</strong> Grade Point = 9, Credits = 3</li>
+                        <li><strong>Subject 3:</strong> Grade Point = 7, Credits = 2</li>
+                    </ul><br>
+                    The SGPA will be:
+                    <div class="formula-container">
+                        <p class="formula">
+                            \[
+                            SGPA = \frac{ \text{(8 x 4) + (9 x 3) + (7 x 2)}}{ (\text{4 + 3 + 2})}\]
+                            \[
+                            &ensp;= \frac{ \text{32 + 27 + 14}}{ \text{9}} = {\text{8.11}}
+                            \]
+                        </p>
+                    </div>
+                </li><br>
+                <li><strong>Purpose of SGPA:</strong> <br>
+                    The SGPA provides a standardized way to evaluate academic performance across different courses and
+                    semesters.
+                </li><br>
+            </ol>
+        </div>
+    </div>
+
+    <div class="cgpaCalculation">
+        <div class="container">
+            <div class="container mt-4"></div>
+            <form>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="semCount">Number of Semesters</label>
+                    <select class="form-select" id="semCount">
+                        <option selected>--Select the Number of Semesters--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+            </form>
+            <form>
+                <div class="input-group mb-3" id="sems">
+
+                </div>
+                <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
+                    <button type="reset" onclick="handleClearCGPA()" class="btn btn-outline-danger">Clear</button>
+                    <button type="button" onclick="handleSubmitCGPA()" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="container" id="resultParent">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" id="labelForCGPA">Your CGPA</li>
+                <li id="resultCGPA" class="list-group-item">-</li>
+            </ul>
+        </div>
+        <div class="container mt-5">
+            <div class="h5">
+                Here's a breakdown of how is your CGPA calculated -<br>
+            </div>
+            The <strong>Cumulative Grade Point Average (CGPA) </strong>is a measure of a student's overall academic
+            performance across all semesters completed so far. It provides a comprehensive evaluation of the student’s
+            progress and is an aggregate of the Semester Grade Point Averages (SGPAs) for all semesters. Here's a
+            detailed breakdown:<br><br>
+            <ol>
+                <li><strong>What is CGPA?</strong> <br>
+                    The <strong>CGPA</strong> is a weighted average of the SGPA values of all semesters. Each semester's
+                    SGPA contributes to the CGPA in proportion to the total credits of that semester.
+                </li><br>
+                <li><strong>Formula for CGPA:</strong> <br>
+                    The formula to calculate CGPA is: <br>
+                    <div class="formula-container">
+                        <p class="formula">
+                            \[
+                            CGPA = \frac{\sum (\text{SGPA of each semester} \times
+                            \text{Total Credits of that semester})}{\sum (\text{Total Credits of all the semesters})}
+                            \]
+                        </p>
+                    </div>
+                </li><br>
+                <li><strong>Steps to Calculate CGPA:</strong> <br>
+                    <ol>
+                        <li><strong>Calculate the SGPA for Each Semester:</strong><br>The SGPA for each semester must be
+                            computed using the weighted average of grade points and credits for that semester.</li>
+                        <li><strong>Find the Total Credits for Each Semester:</strong><br>Each semester has a specific
+                            number of total credits based on the courses (subjects) taken.</li>
+                        <li><strong>Multiply SGPA with Semester Credits:</strong><br>For every semester, multiply the
+                            SGPA by the total credits of that semester.</li>
+                        <li><strong>Sum Up the Results:</strong><br>Add up the weighted SGPA values (SGPA × Credits) of
+                            all semesters.</li>
+                        <li><strong>Sum Up All Credits:</strong><br>Calculate the total credits for all semesters
+                            combined.</li>
+                        <li><strong>Divide to Get CGPA:</strong><br>Divide the total weighted SGPA values by the total
+                            credits across all semesters.</li>
+                        </ul><br>
+                </li><br>
+            </ol>
+            <li><strong>Example Calculation:</strong> <br>
+                Suppose a student has completed 3 semesters with the following details:
+
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Range</th>
-                            <th>Grade Point</th>
+                            <th>Semester</th>
+                            <th>SGPA</th>
+                            <th>Total Credits</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>90-100</th>
-                            <td>10</td>
+                            <th>Semester 1</th>
+                            <td>8.5</td>
+                            <td>20</td>
                         </tr>
                         <tr>
-                            <th>75-89</th>
-                            <td>9</td>
+                            <th>Semester 2</th>
+                            <td>9.0</td>
+                            <td>24</td>
                         </tr>
                         <tr>
-                            <th>65-74</th>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <th>55-64</th>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <th>50-54</th>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <th>45-49</th>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <th>40-44</th>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <th>Below 40</th>
-                            <td>0</td>
+                            <th>Semester 3</th>
+                            <td>8.2</td>
+                            <td>22</td>
                         </tr>
                     </tbody>
                 </table>
+                <strong>Step 1: Calculate Weighted SGPA Values</strong>
+                \[{ \text{(8.5 x 20) + (9.0 x 24) + (8.2 x 22)}}\]
+                \[={ \text{170 + 216 + 180.4}}\]
+                \[={ \text{566.4}}\]
+                <strong>Step 2: Calculate Total Credits</strong>
+                \[{ \text{20 + 24 + 22 = 66}}\]
+                <strong>Step 3: Divide Weighted SGPA Values by Total Credits</strong>
+                \[CGPA = \frac{ \text{566.4}}{\text{66}}&#8773;8.58\]
+                <strong>Result:</strong> The student's CGPA is <strong>8.58</strong>.
             </li><br>
-            <li><strong>Credit System:</strong> <br>
-                Each subject is assigned a certain number of credits (a measure of workload or importance). For
-                example:
+            <li><strong>Purpose of CGPA:</strong> <br>
                 <ul>
-                    <li>A theory subject might have <strong>4 credits.</strong></li>
-                    <li>A lab session might have <strong>2 credits.</strong></li>
+                    <li>
+                        <strong>Comprehensive Evaluation: </strong>CGPA reflects a student’s consistent performance over
+                        all semesters.
+                    </li>
+                    <li>
+                        <strong>University Standards: </strong>It is widely used by universities to measure academic
+                        standing.
+                    </li>
+                    <li>
+                        <strong>Career Relevance: </strong>Many employers and academic programs consider CGPA for
+                        screening candidates.
+                    </li>
                 </ul>
             </li><br>
-            <li><strong>Formula for SGPA:</strong> <br>
-                The SGPA is calculated using the formula: <br>
-                <div class="formula-container">
-                    <p class="formula">
-                        \[
-                        SGPA = \frac{\sum (\text{Grade Points} \times \text{Credits})}{\sum (\text{Credits})}
-                        \]
-                    </p>
-                </div>
-                where:
-                <ul>
-                    <li><strong>Grade Points: </strong>Grade point earned for a subject</li>
-                    <li><strong>Credits: </strong>Number of credits for that subject.</li>
-                </ul>
-            </li><br>
-            <li><strong>Example Calculation:</strong> <br>
-                Suppose a student has 3 subjects with the following details:
-                <ul>
-                    <li><strong>Subject 1:</strong> Grade Point = 8, Credits = 4</li>
-                    <li><strong>Subject 2:</strong> Grade Point = 9, Credits = 3</li>
-                    <li><strong>Subject 3:</strong> Grade Point = 7, Credits = 2</li>
-                </ul><br>
-                The SGPA will be:
-                <div class="formula-container">
-                    <p class="formula">
-                        \[
-                        SGPA = \frac{ \text{(8 x 4) + (9 x 3) + (7 x 2)}}{ (\text{4 + 3 + 2})}\]
-                        \[
-                        &ensp;= \frac{ \text{32 + 27 + 14}}{ \text{9}} = {\text{8.11}}
-                        \]
-                    </p>
-                </div>
-            </li><br>
-            <li><strong>Purpose of SGPA:</strong> <br>
-                The SGPA provides a standardized way to evaluate academic performance across different courses and
-                semesters.
-            </li><br>
-        </ol>
+            </ol>
+        </div>
     </div>
     <footer class="bg-light py-3">
         <div class="container text-center">

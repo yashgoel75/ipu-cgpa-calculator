@@ -6,8 +6,20 @@ body {
     background-color: #f8f9fa;
 }
 
+#labelForCGPA {
+    background-color: #f8f9fa;
+}
+
 @media screen and (max-width: 576px) {
     img#logo {
         width: 110px;
     }
+}
+
+.sgpaCalculation {
+    display: none;
+}
+
+.selection {
+    text-align: center;
 }
