@@ -19,6 +19,7 @@ subjectCount.addEventListener('change', () => {
 
         const inputMarks = document.createElement('input');
         inputMarks.type = "number";
+        inputMarks.required = true;
         inputMarks.min = 0;
         inputMarks.max = 100;
         inputMarks.required = true;
@@ -33,6 +34,7 @@ subjectCount.addEventListener('change', () => {
 
         const inputCredit = document.createElement('input');
         inputCredit.type = "number";
+        inputCredit.required = true;
         inputCredit.min = 0;
         inputCredit.max = 100;
         inputCredit.required = true;
@@ -53,6 +55,13 @@ function handleSubmit() {
     for (let i=0; i<numberOfSub; i++) {
         const currentGrade = parseInt(document.getElementById(`marks${i + 1}`).value);
         const currentCredit = parseInt(document.getElementById(`credit${i + 1}`).value);
+
+        if (isNaN(currentGrade) || isNaN(currentCredit)) {
+            alert(`Please fill in all fields for Subject ${i + 1}.`);
+            marksInput.focus();
+            return;
+        }
+
         let currentGradePoint;
         if (currentGrade >= 90 && currentGrade <= 100) currentGradePoint = 10;
         if (currentGrade >= 75 && currentGrade <= 89) currentGradePoint = 9;
@@ -68,6 +77,7 @@ function handleSubmit() {
     }
     
     const parentResult = document.getElementById('resultParent');
+    parentResult.innerHTML = '';
     const unorderedList = document.createElement('ul');
     unorderedList.classList = "list-group list-group-horizontal";
     const resultHeading = document.createElement('li');
@@ -77,8 +87,8 @@ function handleSubmit() {
     unorderedList.appendChild(resultHeading);
     const result = document.createElement('li');
     result.classList = "list-group-item";
-    result.innerHTML = Math.round((gradePoint/creditSum)*100)/100;
-    result.textContent = Math.round((gradePoint/creditSum)*100)/100;
+    result.innerHTML = gradePoint/creditSum;
+    result.textContent = gradePoint/creditSum;
     result.id = 'result';
     unorderedList.appendChild(result);
     parentResult.appendChild(unorderedList);
