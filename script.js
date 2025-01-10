@@ -48,6 +48,10 @@ subjectCount.addEventListener('change', () => {
     }
 });
 
+function handleClear() {
+    result.innerHTML = '-';
+    result.textContent = '-';
+}
 function handleSubmit() {
     let gradePoint = 0;
     let creditSum = 0;
