@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,49 +9,52 @@
     ">
     <title>IPU CGPA Calculator</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="container mt-5">
-            <div class="d-flex align-items-center">
-                <img src="src/logo.png" id="logo" class="img-fluid, custom-size" alt="...">
-                <div id="welcomeText" class="h3">
-                    Welcome to IPU CGPA Calculator
+    <div>
+        <div class="container">
+            <div class="container mt-5">
+                <div class="d-flex align-items-center">
+                    <img src="src/logo.png" id="logo" class="img-fluid, custom-size" alt="...">
+                    <div id="welcomeText" class="h3">
+                        Welcome to IPU CGPA Calculator
+                    </div>
                 </div>
             </div>
+            <div class="container mt-2"></div>
+            <form>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="subjectCount">Number of Subjects</label>
+                    <select class="form-select" id="subjectCount">
+                        <option selected>--Select the Number of Subjects--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+            </form>
+            <form>
+                <div class="input-group mb-3" id="subjects">
+
+                </div>
+                <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
+                    <button type="reset" class="btn btn-outline-danger">Clear</button>
+                    <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </form>
         </div>
-        <div class="container mt-2"></div>
-        <form>
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="subjectCount">Number of Subjects</label>
-                <select class="form-select" id="subjectCount">
-                    <option selected>--Select the Number of Subjects--</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-            </div>
-        </form>
-        <form> 
-            <div class="input-group mb-3" id="subjects">
-                   
-            </div>
-            <div class="btn-group float-end" role="group" aria-label="Basic outlined example">
-                <button type="reset" class="btn btn-outline-danger">Clear</button>
-                <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
-            </div>
-        </form>
-    </div>
-    <div class="container" id="resultParent"></div>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="container" id="resultParent"></div>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
