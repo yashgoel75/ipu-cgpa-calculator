@@ -11,123 +11,122 @@
 </head>
 
 <body>
-    <div>
+    <nav class="navbar bg-body-tertiary">
         <div class="container">
-            <div class="container mt-4">
-                <div class="d-flex align-items-center">
-                    <img src="src/logo.png" id="logo" class="img-fluid, custom-size" alt="...">
-                    <div class="h3">
-                        Welcome to IPU CGPA Calculator
-                    </div>
-                </div>
+            <a class="navbar-brand" href="#">
+                <img src="src/logo.png" alt="ipu-logo" id="logo" width="170" height=auto>
+            </a>
+            <div class="h3">Welcome to IPU CGPA Calculator</div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container mt-4"></div>
+        <form>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="subjectCount">Number of Subjects</label>
+                <select class="form-select" id="subjectCount">
+                    <option selected>--Select the Number of Subjects--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                </select>
             </div>
-            <div class="container mt-4"></div>
-            <form>
-                <div class="input-group mb-3">
-                    <label class="input-group-text" for="subjectCount">Number of Subjects</label>
-                    <select class="form-select" id="subjectCount">
-                        <option selected>--Select the Number of Subjects--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                    </select>
-                </div>
-            </form>
-            <form>
-                <div class="input-group mb-3" id="subjects">
+        </form>
+        <form>
+            <div class="input-group mb-3" id="subjects">
 
-                </div>
-                <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
-                    <button type="reset" class="btn btn-outline-danger">Clear</button>
-                    <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
-                </div>
-            </form>
-        </div>
-        <div class="container" id="resultParent">
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item" id="labelForSGPA">Your SGPA</li>
-                <li id="result" class="list-group-item">-</li>
-            </ul>
-        </div>
-        <div class="container mt-5">
-            <div class="h5">
-                Here's a breakdown of how is your SGPA calculated -<br>
             </div>
-            <strong>Semester Grade Point Average (SGPA) </strong>is a measure of a student’s academic performance in a
-            given semester. It is calculated as the weighted average of the grade points obtained in all subjects, with
-            the respective credit values as weights. Here's how it is typically calculated: <br><br>
-            <ol>
-                <li><strong>Grade Points for Each Subject:</strong> <br>
-                    <ul>
-                        <li>90-100: Grade Point = 10</li>
-                        <li>75-89: Grade Point = 9</li>
-                        <li>65-74: Grade Point = 8</li>
-                        <li>55-64: Grade Point = 7</li>
-                        <li>50-54: Grade Point = 6</li>
-                        <li>45-49: Grade Point = 5</li>
-                        <li>40-44: Grade Point = 4</li>
-                        <li>Below 40: Grade Point = 0 (Fail)</li>
-                    </ul>
-                </li><br>
-                <li><strong>Credit System:</strong> <br>
-                    Each subject is assigned a certain number of credits (a measure of workload or importance). For
-                    example:
-                    <ul>
-                        <li>A theory subject might have <strong>4 credits.</strong></li>
-                        <li>A lab session might have <strong>2 credits.</strong></li>
-                    </ul>
-                </li><br>
-                <li><strong>Formula for SGPA:</strong> <br>
-                    The SGPA is calculated using the formula: <br>
-                    <div class="formula-container">
-                        <p class="formula">
-                            \[
-                            SGPA = \frac{\sum (\text{Grade Points} \times \text{Credits})}{\sum (\text{Credits})}
-                            \]
-                        </p>
-                    </div>
-                    where:
-                    <ul>
-                        <li><strong>Grade Points: </strong>Grade point earned for a subject</li>
-                        <li><strong>Credits: </strong>Number of credits for that subject.</li>
-                    </ul>
-                </li><br>
-                <li><strong>Example Calculation:</strong> <br>
-                    Suppose a student has 3 subjects with the following details:
-                    <ul>
-                        <li><strong>Subject 1:</strong> Grade Point = 8, Credits = 4</li>
-                        <li><strong>Subject 2:</strong> Grade Point = 9, Credits = 3</li>
-                        <li><strong>Subject 3:</strong> Grade Point = 7, Credits = 2</li>
-                    </ul><br>
-                    The SGPA will be:
-                    <div class="formula-container">
-                        <p class="formula">
-                            \[
-                            SGPA = \frac{ \text{(8 x 4) + (9 x 3) + (7 x 2)}}{ (\text{4 + 3 + 2})}
-                            = \frac{ \text{32 + 27 + 14}}{ \text{9}} = {\text{8.11}}
-                            \]
-                        </p>
-                    </div>
-                </li><br>
-                <li><strong>Purpose of SGPA:</strong> <br>
-                    The SGPA provides a standardized way to evaluate academic performance across different courses and
-                    semesters.
-                </li><br>
-            </ol>
+            <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
+                <button type="reset" class="btn btn-outline-danger">Clear</button>
+                <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container" id="resultParent">
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" id="labelForSGPA">Your SGPA</li>
+            <li id="result" class="list-group-item">-</li>
+        </ul>
+    </div>
+    <div class="container mt-5">
+        <div class="h5">
+            Here's a breakdown of how is your SGPA calculated -<br>
         </div>
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <strong>Semester Grade Point Average (SGPA) </strong>is a measure of a student’s academic performance in a
+        given semester. It is calculated as the weighted average of the grade points obtained in all subjects, with
+        the respective credit values as weights. Here's how it is typically calculated: <br><br>
+        <ol>
+            <li><strong>Grade Points for Each Subject:</strong> <br>
+                <ul>
+                    <li>90-100: Grade Point = 10</li>
+                    <li>75-89: Grade Point = 9</li>
+                    <li>65-74: Grade Point = 8</li>
+                    <li>55-64: Grade Point = 7</li>
+                    <li>50-54: Grade Point = 6</li>
+                    <li>45-49: Grade Point = 5</li>
+                    <li>40-44: Grade Point = 4</li>
+                    <li>Below 40: Grade Point = 0 (Fail)</li>
+                </ul>
+            </li><br>
+            <li><strong>Credit System:</strong> <br>
+                Each subject is assigned a certain number of credits (a measure of workload or importance). For
+                example:
+                <ul>
+                    <li>A theory subject might have <strong>4 credits.</strong></li>
+                    <li>A lab session might have <strong>2 credits.</strong></li>
+                </ul>
+            </li><br>
+            <li><strong>Formula for SGPA:</strong> <br>
+                The SGPA is calculated using the formula: <br>
+                <div class="formula-container">
+                    <p class="formula">
+                        \[
+                        SGPA = \frac{\sum (\text{Grade Points} \times \text{Credits})}{\sum (\text{Credits})}
+                        \]
+                    </p>
+                </div>
+                where:
+                <ul>
+                    <li><strong>Grade Points: </strong>Grade point earned for a subject</li>
+                    <li><strong>Credits: </strong>Number of credits for that subject.</li>
+                </ul>
+            </li><br>
+            <li><strong>Example Calculation:</strong> <br>
+                Suppose a student has 3 subjects with the following details:
+                <ul>
+                    <li><strong>Subject 1:</strong> Grade Point = 8, Credits = 4</li>
+                    <li><strong>Subject 2:</strong> Grade Point = 9, Credits = 3</li>
+                    <li><strong>Subject 3:</strong> Grade Point = 7, Credits = 2</li>
+                </ul><br>
+                The SGPA will be:
+                <div class="formula-container">
+                    <p class="formula">
+                        \[
+                        SGPA = \frac{ \text{(8 x 4) + (9 x 3) + (7 x 2)}}{ (\text{4 + 3 + 2})}
+                        = \frac{ \text{32 + 27 + 14}}{ \text{9}} = {\text{8.11}}
+                        \]
+                    </p>
+                </div>
+            </li><br>
+            <li><strong>Purpose of SGPA:</strong> <br>
+                The SGPA provides a standardized way to evaluate academic performance across different courses and
+                semesters.
+            </li><br>
+        </ol>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 
 </html>

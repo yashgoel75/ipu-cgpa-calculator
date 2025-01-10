@@ -2,17 +2,6 @@ body {
     margin-bottom: 20px;
 }
 
-.custom-size {
-    padding-top: 10px;
-    float: inline-start;
-    width: 170px;
-    height: auto;
-}
-
-.h3 {
-    margin-left: 15px;
-}
-
 .formula-container {
     margin-left: 10%;
 }
