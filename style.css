@@ -1,3 +1,7 @@
+body {
+    margin-bottom: 20px;
+}
+
 .custom-size {
     padding-top: 10px;
     float: inline-start;
@@ -5,6 +9,14 @@
     height: auto;
 }
 
-#welcomeText {
+.h3 {
     margin-left: 15px;
+}
+
+.formula-container {
+    margin-left: 10%;
+}
+
+#labelForSGPA {
+    background-color: #f8f9fa;
 }
