@@ -61,6 +61,14 @@ function handleSubmit() {
             marksInput.focus();
             return;
         }
+        if (currentGrade > 100) {
+            alert(`Maximum marks for a subject cannot exceed 100. Please check Subject ${i + 1}.`);
+            return;
+        }
+        if (currentCredit > 4) {
+            alert(`Maximum credits for a subject cannot exceed 4. Please check Subject ${i + 1}.`);
+            return;
+        }
 
         let currentGradePoint;
         if (currentGrade >= 90 && currentGrade <= 100) currentGradePoint = 10;
