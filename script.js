@@ -87,8 +87,8 @@ function handleSubmit() {
     unorderedList.appendChild(resultHeading);
     const result = document.createElement('li');
     result.classList = "list-group-item";
-    result.innerHTML = gradePoint/creditSum;
-    result.textContent = gradePoint/creditSum;
+    result.innerHTML = Math.round((gradePoint/creditSum)*100)/100;
+    result.textContent = Math.round((gradePoint/creditSum)*100)/100;
     result.id = 'result';
     unorderedList.appendChild(result);
     parentResult.appendChild(unorderedList);
