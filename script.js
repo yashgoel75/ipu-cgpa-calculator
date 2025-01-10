@@ -179,7 +179,7 @@ function handleSubmitCGPA() {
         const currentCredit = parseInt(document.getElementById(`creditCGPA${i + 1}`).value);
 
         if (isNaN(currentSGPA) || isNaN(currentCredit)) {
-            alert(`Please fill in all fields for Subject ${i + 1}.`);
+            alert(`Please fill in all fields for Semester ${i + 1}.`);
             marksInput.focus();
             return;
         }
