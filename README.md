@@ -49,8 +49,6 @@ IPU CGPA Calculator is a simple, web-based application designed to help students
   SGPA = (Σ (Grade Points × Credits)) / (Σ Credits)
   ```
 
----
-
 ### CGPA Calculation
 - Input the SGPA and total credits for each semester.
 - The app computes CGPA using:
