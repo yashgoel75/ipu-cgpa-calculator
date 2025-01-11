@@ -54,7 +54,6 @@ IPU CGPA Calculator is a simple, web-based application designed to help students
 - The app computes CGPA using:
   ```plaintext
   CGPA = (Σ (SGPA × Total Credits)) / (Σ Total Credits)
-
 ---
 
 ## Dynamic Toggle
@@ -75,7 +74,7 @@ IPU CGPA Calculator is a simple, web-based application designed to help students
 ---
 
 ## 🌐 Live Demo
-Try out the app here: IPU CGPA Calculator
+Try out the app here: [IPU CGPA Calculator](https://ipucgpacalculator.vercel.app)
 
 ---
 
@@ -95,8 +94,6 @@ The SGPA is calculated as:
 SGPA = (9×4 + 8×3 + 7×2) / (4 + 3 + 2) = 8.33
 ```
 
----
-
 ### CGPA Calculation Example
 Suppose you have 3 subjects with the following details:
 
@@ -106,9 +103,9 @@ Suppose you have 3 subjects with the following details:
 | Semester 2 | 9.0          | 24      |
 | Semester 3 | 8.2          | 22      |
 
-The SGPA is calculated as:
+The CGPA is calculated as:
 ```plaintext
-SGPA = (9×4 + 8×3 + 7×2) / (4 + 3 + 2) = 8.33
+CGPA = (8.5x20 + 9.0×24 + 8.2×22) / (20 + 24 + 22) = 8.58
 ```
 
 ---
