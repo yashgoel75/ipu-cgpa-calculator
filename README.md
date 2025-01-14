@@ -29,6 +29,8 @@ IPU CGPA Calculator is a simple, web-based application designed to help students
 ├── script.js      # JavaScript for interactivity and calculations
 └── src/           # Contains images, icons, and other static assets
     └── logo.png   # Logo used in the application
+    └── switch-to-dark-mode.png   # toggle used in the application to switch to dark mode
+    └── switch-to-light-mode.png  # toggle used in the application to switch to light mode
 
 ```
 ---
