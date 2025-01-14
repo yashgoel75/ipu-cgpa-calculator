@@ -4,6 +4,18 @@ let numberOfSub;
 let numberOfSem;
 let currentMode = "light";
 
+const currentHour = new Date().getHours();
+
+if (currentHour >= 5 && currentHour <= 19) {
+  if (currentMode == "dark") {
+    darkMode();
+  }
+} else {
+  if (currentMode == "light") {
+    darkMode();
+  }
+}
+
 subjectCount.addEventListener("change", () => {
   const numSubject = document.getElementById("subjectCount").value;
   numberOfSub = numSubject;
