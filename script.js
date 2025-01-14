@@ -71,7 +71,7 @@ semCount.addEventListener("change", () => {
     const sgpaSpan = document.createElement("span");
     sgpaSpan.classList.add("input-group-text");
     if (currentMode == "dark") {
-      sgpaSpan
+      sgpaSpan;
     }
     sgpaSpan.textContent = `SGPA in Semester ${i + 1}`;
     inputGroup.appendChild(sgpaSpan);
@@ -277,7 +277,7 @@ function darkMode() {
     const switchToDarkModeImg = document.getElementById("switchToDarkMode");
     switchToDarkModeImg.style.display = "none";
 
-    document.documentElement.setAttribute('data-bs-theme','dark')
+    document.documentElement.setAttribute("data-bs-theme", "dark");
 
     currentMode = "dark";
   } else {
@@ -287,7 +287,8 @@ function darkMode() {
     }
     const footer = document.getElementsByTagName("footer");
     for (const element of footer) {
-      element.classList = "py-3 bg-light";
+      element.classList = "py-3";
+      element.style.backgroundColor = "#f9f9f9";
     }
     const table = document.getElementsByTagName("table");
     for (const element of table) {
@@ -319,7 +320,7 @@ function darkMode() {
     const switchToDarkModeImg = document.getElementById("switchToDarkMode");
     switchToDarkModeImg.style.display = "inline";
 
-    document.documentElement.setAttribute('data-bs-theme','light')
+    document.documentElement.setAttribute("data-bs-theme", "light");
 
     currentMode = "light";
   }
