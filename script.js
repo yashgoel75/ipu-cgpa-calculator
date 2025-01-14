@@ -287,7 +287,7 @@ function darkMode() {
     }
     const footer = document.getElementsByTagName("footer");
     for (const element of footer) {
-      element.classList = "py-3";
+      element.classList = "py-3 bg-light";
     }
     const table = document.getElementsByTagName("table");
     for (const element of table) {
