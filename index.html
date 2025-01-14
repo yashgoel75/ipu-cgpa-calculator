@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="An online IPU CGPA Calculator to help students calculate their CGPA accurately.">
-    <meta name="keywords" content="IPU, CGPA, Calculator, GGSIPU, Student Tools, Guru Gobind Singh Indraprastha University, Delhi">
+    <meta name="keywords"
+        content="IPU, CGPA, Calculator, GGSIPU, Student Tools, Guru Gobind Singh Indraprastha University, Delhi">
     <meta name="author" content="Yash Goel">
 
     <link rel="stylesheet" href="style.css">
@@ -15,12 +16,20 @@
 </head>
 
 <body>
+
+    <div class="mt-1 mb-1 me-3 text-end"><img id="switchToDarkMode" onclick="darkMode()"
+            src="src/switch-to-dark-mode.png" width="25" title="Switch to Dark Mode" alt=""></div>
+    <div class="mt-1 mb-1 me-3 text-end"> <img id="switchToLightMode" onclick="darkMode()"
+            src="src/switch-to-light-mode.png" width="25" title="Switch to Light Mode" alt=""></div>
+    </div>
     <nav class="navbar bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="src/logo.png" alt="ipu-logo" id="logo" width="170" height=auto>
             </a>
-            <div class="h3">Welcome to IPU CGPA Calculator</div>
+            <div class="h3">
+                Welcome to IPU CGPA Calculator
+            </div>
         </div>
     </nav>
 
@@ -28,10 +37,10 @@
         <div class="container mt-4"></div>
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
             <input type="radio" onclick="sgpa()" class="btn-check" name="btnradio" id="sgpa" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="sgpa">SGPA</label>
+            <label id="sgpaSwitch" class="btn btn-outline-primary" for="sgpa">SGPA</label>
 
             <input type="radio" onclick="cgpa()" class="btn-check" name="btnradio" id="cgpa" autocomplete="off">
-            <label class="btn btn-outline-primary" for="cgpa">CGPA</label>
+            <label id="cgpaSwitch" class="btn btn-outline-primary" for="cgpa">CGPA</label>
         </div>
     </div>
 
@@ -64,14 +73,16 @@
 
                 </div>
                 <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
-                    <button type="reset" onclick="handleClear()" class="btn btn-outline-danger">Clear</button>
-                    <button type="button" onclick="handleSubmit()" class="btn btn-outline-primary">Submit</button>
+                    <button type="reset" onclick="handleClear()" id="buttonClear"
+                        class="btn btn-outline-danger">Clear</button>
+                    <button type="button" onclick="handleSubmit()" id="buttonSubmit"
+                        class="btn btn-outline-primary">Submit</button>
                 </div>
             </form>
         </div>
         <div class="container" id="resultParent">
             <ul class="list-group list-group-horizontal">
-                <li class="list-group-item" id="labelForSGPA">Your SGPA</li>
+                <li class="list-group-item bg-body-tertiary" id="labelForSGPA">Your SGPA</li>
                 <li id="result" class="list-group-item">-</li>
             </ul>
         </div>
@@ -84,7 +95,7 @@
             the respective credit values as weights. Here's how it is typically calculated: <br><br>
             <ol>
                 <li><strong>Grade Points for Each Subject:</strong> <br>
-                    <table class="table">
+                    <table class="table" id="table">
                         <thead>
                             <tr>
                                 <th>Range</th>
@@ -200,14 +211,16 @@
 
                 </div>
                 <div class="btn-group float-end mb-5" role="group" aria-label="Basic outlined example">
-                    <button type="reset" onclick="handleClearCGPA()" class="btn btn-outline-danger">Clear</button>
-                    <button type="button" onclick="handleSubmitCGPA()" class="btn btn-outline-primary">Submit</button>
+                    <button type="reset" onclick="handleClearCGPA()" id="buttonClearCGPA"
+                        class="btn btn-outline-danger">Clear</button>
+                    <button type="button" onclick="handleSubmitCGPA()" id="buttonSubmitCGPA"
+                        class="btn btn-outline-primary">Submit</button>
                 </div>
             </form>
         </div>
         <div class="container" id="resultParent">
             <ul class="list-group list-group-horizontal">
-                <li class="list-group-item" id="labelForCGPA">Your CGPA</li>
+                <li class="list-group-item bg-body-tertiary" id="labelForCGPA">Your CGPA</li>
                 <li id="resultCGPA" class="list-group-item">-</li>
             </ul>
         </div>

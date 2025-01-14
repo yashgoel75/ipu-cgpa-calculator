@@ -2,14 +2,6 @@ body {
     margin-bottom: 20px;
 }
 
-#labelForSGPA {
-    background-color: #f8f9fa;
-}
-
-#labelForCGPA {
-    background-color: #f8f9fa;
-}
-
 @media screen and (max-width: 576px) {
     img#logo {
         width: 110px;
@@ -23,3 +15,8 @@ body {
 .selection {
     text-align: center;
 }
+
+img#switchToLightMode {
+    display: none;
+}
+
