@@ -6,9 +6,9 @@ let currentMode = "light";
 
 const currentHour = new Date().getHours();
 
-if (currentHour >= 5 && currentHour <= 19) {
+if (currentHour >= 5 && currentHour <= 18) {
   if (currentMode == "dark") {
-    darkMode();
+    lightMode();
   }
 } else {
   if (currentMode == "light") {
@@ -250,90 +250,90 @@ function handleSubmitCGPA() {
 }
 
 function darkMode() {
-  if (currentMode == "light") {
-    const navigation = document.getElementsByTagName("nav");
-    for (const element of navigation) {
-      element.classList = "navbar bg-dark";
-    }
-    const footer = document.getElementsByTagName("footer");
-    for (const element of footer) {
-      element.classList = "py-3 bg-dark";
-    }
-    const table = document.getElementsByTagName("table");
-    for (const element of table) {
-      element.classList = "table table-striped table-dark";
-    }
-    document.body.style.backgroundColor = "#1e1e1e";
-    document.body.style.color = "white";
-
-    const clearButton = document.getElementById("buttonClear");
-    clearButton.classList = "btn btn-warning";
-
-    const submitButton = document.getElementById("buttonSubmit");
-    submitButton.classList = "btn btn-secondary";
-
-    const clearButtonCGPA = document.getElementById("buttonClearCGPA");
-    clearButtonCGPA.classList = "btn btn-warning";
-
-    const submitButtonCGPA = document.getElementById("buttonSubmitCGPA");
-    submitButtonCGPA.classList = "btn btn-secondary";
-
-    const switchButtonSGPA = document.getElementById("sgpaSwitch");
-    switchButtonSGPA.classList = "btn btn-outline-secondary";
-    const switchButtonCGPA = document.getElementById("cgpaSwitch");
-    switchButtonCGPA.classList = "btn btn-outline-secondary";
-
-    const switchToLightModeImg = document.getElementById("switchToLightMode");
-    switchToLightModeImg.style.display = "inline";
-
-    const switchToDarkModeImg = document.getElementById("switchToDarkMode");
-    switchToDarkModeImg.style.display = "none";
-
-    document.documentElement.setAttribute("data-bs-theme", "dark");
-
-    currentMode = "dark";
-  } else {
-    const navigation = document.getElementsByTagName("nav");
-    for (const element of navigation) {
-      element.classList = "navbar bg-body-tertiary";
-    }
-    const footer = document.getElementsByTagName("footer");
-    for (const element of footer) {
-      element.classList = "py-3";
-      element.style.backgroundColor = "#f9f9f9";
-    }
-    const table = document.getElementsByTagName("table");
-    for (const element of table) {
-      element.classList = "table";
-    }
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "black";
-
-    const clearButton = document.getElementById("buttonClear");
-    clearButton.classList = "btn btn-outline-danger";
-
-    const submitButton = document.getElementById("buttonSubmit");
-    submitButton.classList = "btn btn-outline-primary";
-
-    const clearButtonCGPA = document.getElementById("buttonClearCGPA");
-    clearButtonCGPA.classList = "btn btn-outline-danger";
-
-    const submitButtonCGPA = document.getElementById("buttonSubmitCGPA");
-    submitButtonCGPA.classList = "btn btn-outline-primary";
-
-    const switchButtonSGPA = document.getElementById("sgpaSwitch");
-    switchButtonSGPA.classList = "btn btn-outline-primary";
-    const switchButtonCGPA = document.getElementById("cgpaSwitch");
-    switchButtonCGPA.classList = "btn btn-outline-primary";
-
-    const switchToLightModeImg = document.getElementById("switchToLightMode");
-    switchToLightModeImg.style.display = "none";
-
-    const switchToDarkModeImg = document.getElementById("switchToDarkMode");
-    switchToDarkModeImg.style.display = "inline";
-
-    document.documentElement.setAttribute("data-bs-theme", "light");
-
-    currentMode = "light";
+  const navigation = document.getElementsByTagName("nav");
+  for (const element of navigation) {
+    element.classList = "navbar bg-dark";
   }
+  const footer = document.getElementsByTagName("footer");
+  for (const element of footer) {
+    element.classList = "py-3 bg-dark";
+  }
+  const table = document.getElementsByTagName("table");
+  for (const element of table) {
+    element.classList = "table table-striped table-dark";
+  }
+  document.body.style.backgroundColor = "#1e1e1e";
+  document.body.style.color = "white";
+
+  const clearButton = document.getElementById("buttonClear");
+  clearButton.classList = "btn btn-warning";
+
+  const submitButton = document.getElementById("buttonSubmit");
+  submitButton.classList = "btn btn-secondary";
+
+  const clearButtonCGPA = document.getElementById("buttonClearCGPA");
+  clearButtonCGPA.classList = "btn btn-warning";
+
+  const submitButtonCGPA = document.getElementById("buttonSubmitCGPA");
+  submitButtonCGPA.classList = "btn btn-secondary";
+
+  const switchButtonSGPA = document.getElementById("sgpaSwitch");
+  switchButtonSGPA.classList = "btn btn-outline-secondary";
+  const switchButtonCGPA = document.getElementById("cgpaSwitch");
+  switchButtonCGPA.classList = "btn btn-outline-secondary";
+
+  const switchToLightModeImg = document.getElementById("switchToLightMode");
+  switchToLightModeImg.style.display = "inline";
+
+  const switchToDarkModeImg = document.getElementById("switchToDarkMode");
+  switchToDarkModeImg.style.display = "none";
+
+  document.documentElement.setAttribute("data-bs-theme", "dark");
+
+  currentMode = "dark";
+}
+
+function lightMode() {
+  const navigation = document.getElementsByTagName("nav");
+  for (const element of navigation) {
+    element.classList = "navbar bg-body-tertiary";
+  }
+  const footer = document.getElementsByTagName("footer");
+  for (const element of footer) {
+    element.classList = "py-3";
+    element.style.backgroundColor = "#f9f9f9";
+  }
+  const table = document.getElementsByTagName("table");
+  for (const element of table) {
+    element.classList = "table";
+  }
+  document.body.style.backgroundColor = "white";
+  document.body.style.color = "black";
+
+  const clearButton = document.getElementById("buttonClear");
+  clearButton.classList = "btn btn-outline-danger";
+
+  const submitButton = document.getElementById("buttonSubmit");
+  submitButton.classList = "btn btn-outline-primary";
+
+  const clearButtonCGPA = document.getElementById("buttonClearCGPA");
+  clearButtonCGPA.classList = "btn btn-outline-danger";
+
+  const submitButtonCGPA = document.getElementById("buttonSubmitCGPA");
+  submitButtonCGPA.classList = "btn btn-outline-primary";
+
+  const switchButtonSGPA = document.getElementById("sgpaSwitch");
+  switchButtonSGPA.classList = "btn btn-outline-primary";
+  const switchButtonCGPA = document.getElementById("cgpaSwitch");
+  switchButtonCGPA.classList = "btn btn-outline-primary";
+
+  const switchToLightModeImg = document.getElementById("switchToLightMode");
+  switchToLightModeImg.style.display = "none";
+
+  const switchToDarkModeImg = document.getElementById("switchToDarkMode");
+  switchToDarkModeImg.style.display = "inline";
+
+  document.documentElement.setAttribute("data-bs-theme", "light");
+
+  currentMode = "light";
 }
