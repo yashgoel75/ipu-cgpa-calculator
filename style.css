@@ -16,6 +16,10 @@ body {
     text-align: center;
 }
 
+.labelDarkMode {
+    --bs-border-opacity: 0;
+}
+
 img#switchToLightMode {
     display: none;
 }
