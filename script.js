@@ -196,8 +196,8 @@ function handleSubmit() {
 
   const result = document.getElementById("result");
   result.innerHTML = "";
-  result.innerHTML = Math.round((gradePoint / creditSum) * 100) / 100;
-  result.textContent = Math.round((gradePoint / creditSum) * 100) / 100;
+  result.innerHTML = Math.round((gradePoint / creditSum) * 1000) / 1000;
+  result.textContent = Math.round((gradePoint / creditSum) * 1000) / 1000;
 }
 
 function handleClearCGPA() {
@@ -244,8 +244,8 @@ function handleSubmitCGPA() {
 
   const result = document.getElementById("resultCGPA");
   result.innerHTML = "";
-  result.innerHTML = Math.round((SGPAsum / creditSum) * 100) / 100;
-  result.textContent = Math.round((SGPAsum / creditSum) * 100) / 100;
+  result.innerHTML = Math.round((SGPAsum / creditSum) * 1000) / 1000;
+  result.textContent = Math.round((SGPAsum / creditSum) * 1000) / 1000;
   console.log(result);
 }
 
