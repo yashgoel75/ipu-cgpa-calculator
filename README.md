@@ -15,6 +15,14 @@ IPU CGPA Calculator is a simple, web-based application designed to help students
 - **User-Friendly Interface**  
   Responsive design with a clean, modern layout powered by **Bootstrap**.
 
+- **Dark Mode Toggle**  
+  Allows users to switch between **Light Mode** and **Dark Mode** with ease.
+
+- **Auto Theme Switching**  
+  Automatically detects the time of day:  
+  - Defaults to **Light Mode** between **5 AM and 7 PM**.  
+  - Switches to **Dark Mode** between **7 PM and 5 AM** for comfortable nighttime use.
+
 - **Interactive Functionality**  
   Real-time input handling and dynamic updates using **JavaScript**.
 
