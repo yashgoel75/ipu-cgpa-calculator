@@ -6,14 +6,20 @@ let currentMode = "light";
 
 const currentHour = new Date().getHours();
 
-if (currentHour >= 5 && currentHour <= 18) {
-  if (currentMode == "dark") {
-    lightMode();
-  }
-} else {
-  if (currentMode == "light") {
-    darkMode();
-  }
+// if (currentHour >= 5 && currentHour <= 18) {
+//   if (currentMode == "dark") {
+//     lightMode();
+//   }
+// } else {
+//   if (currentMode == "light") {
+//     darkMode();
+//   }
+// }
+if (localStorage.getItem("mode") === "dark") {
+  darkMode();
+}
+else if (localStorage.getItem("mode") === "light") {
+  lightMode();
 }
 
 subjectCount.addEventListener("change", () => {
@@ -250,6 +256,7 @@ function handleSubmitCGPA() {
 }
 
 function darkMode() {
+  localStorage.setItem("mode", "dark");
   const navigation = document.getElementsByTagName("nav");
   for (const element of navigation) {
     element.classList = "navbar bg-dark";
@@ -294,6 +301,7 @@ function darkMode() {
 }
 
 function lightMode() {
+  localStorage.setItem("mode", "light");
   const navigation = document.getElementsByTagName("nav");
   for (const element of navigation) {
     element.classList = "navbar bg-body-tertiary";
