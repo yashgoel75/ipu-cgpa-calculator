@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ipucgpacalculator.vercel.app
+
+# Sitemaps
+Sitemap: https://ipucgpacalculator.vercel.app/sitemap.xml
